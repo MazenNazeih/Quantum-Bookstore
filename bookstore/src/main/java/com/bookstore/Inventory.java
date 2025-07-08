@@ -17,8 +17,11 @@ public class Inventory {
             }else if (book == null) {
                 throw new IllegalArgumentException("Book cannot be null.");
             }
-            else if(book.getClass() !=  PaperBook.class){
-                throw new  IllegalArgumentException("Book must be PaperBook to add to Inventory");
+            else if(book.getClass() ==  EBook.class){
+                library.put(book, Integer.MAX_VALUE);
+            }
+            else if (book.getClass() ==  ShowcaseBook.class){
+                library.put(book, 1);
             }
                 
             else{
@@ -32,12 +35,34 @@ public class Inventory {
     }
 
     public void buyBook(Book book, int quantity){
-        library.put(book, library.get(book) - quantity);
+        if (book == null){
+            throw new IllegalArgumentException("Book cannot be null.");
+        
+        }
+        else if (book.getClass() ==  EBook.class){
+            throw new IllegalArgumentException("Cannot decide quantity of an Ebook. Call again without identifying quantity.");
+        }
+        else if (book.getClass() ==  ShowcaseBook.class){
+            throw new IllegalArgumentException("Cannot buy a Showcase/Demo Book.");
+        }
+        else{
+            library.put(book, library.get(book) - quantity);
+        }
+       
+    }
+
+    public void buyBook(Book book){
+        if (book.getClass() !=  EBook.class){
+            throw new IllegalArgumentException("Book is not Ebook so must provide quantity.");
+        }
     }
 
     public int getQuantity(Book book) {
         if (book == null) {
             throw new IllegalArgumentException("Book cannot be null.");
+        }
+        if(book.getClass() ==  EBook.class){
+            return Integer.MAX_VALUE;
         }
         return library.getOrDefault(book, 0);
     }
