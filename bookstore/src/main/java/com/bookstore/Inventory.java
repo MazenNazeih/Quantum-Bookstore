@@ -16,7 +16,12 @@ public class Inventory {
                 throw new IllegalArgumentException("Quantity must be greater than zero.");
             }else if (book == null) {
                 throw new IllegalArgumentException("Book cannot be null.");
-            }else{
+            }
+            else if(book.getClass() !=  PaperBook.class){
+                throw new  IllegalArgumentException("Book must be PaperBook to add to Inventory");
+            }
+                
+            else{
                 if (library.containsKey(book)) {
                 library.put(book, library.get(book) + quantity);
                 } else {
