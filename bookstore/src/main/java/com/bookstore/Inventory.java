@@ -52,8 +52,8 @@ public class Inventory {
     }
 
     public void buyBook(Book book){
-        if (book.getClass() !=  EBook.class){
-            throw new IllegalArgumentException("Book is not Ebook so must provide quantity.");
+        if (book.getClass() ==  PaperBook.class){
+            throw new IllegalArgumentException("Book is a PaperBook so must provide quantity.");
         }
     }
 

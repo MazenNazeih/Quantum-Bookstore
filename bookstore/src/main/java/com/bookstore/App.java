@@ -52,7 +52,15 @@ public class App
         customer.buy(Cost);
        
         // Update inventory
-        inventory.buyBook(book, quantity);
+        if (book.getClass() ==  PaperBook.class){
+              inventory.buyBook(book, quantity);
+        }
+        else if (book.getClass() ==  EBook.class){
+            inventory.buyBook(book);
+        }
+        else if( book.getClass() ==  ShowcaseBook.class){
+            throw new IllegalArgumentException("Cannot buy a demo book");
+        }
         return Cost; 
     }
 }
