@@ -34,6 +34,19 @@ public class Inventory {
 
     }
 
+    public void addBook(Book book) {
+        if (book == null) {
+            throw new IllegalArgumentException("Book cannot be null.");
+        }
+        if (book.getClass() ==  EBook.class) {
+            library.put(book, Integer.MAX_VALUE);
+        } else if (book.getClass() ==  ShowcaseBook.class) {
+            library.put(book, 1);
+        } else {
+            throw new IllegalArgumentException("Quantity must be provided for PaperBooks.");
+        }
+    }
+
     public void buyBook(Book book, int quantity){
         if (book == null){
             throw new IllegalArgumentException("Book cannot be null.");
@@ -94,7 +107,13 @@ public class Inventory {
         return outdatedBooks.toArray(new Book[0]);
     }
 
+public Book[] getBooks() {
+        return this.library.keySet().toArray(new Book[0]);
+    }
 
+    public Map<Book, Integer> getLibrary() {
+        return this.library;
+    }   
 
 
 }

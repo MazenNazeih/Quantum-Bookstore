@@ -21,19 +21,19 @@ public abstract class Book {
     }
 
     public String getISBN() {
-        return ISBN;
+        return this.ISBN;
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {
@@ -41,7 +41,7 @@ public abstract class Book {
     }
 
     public LocalDate getPublishedyear() {
-        return publishedyear;
+        return this.publishedyear;
     }
 
 
