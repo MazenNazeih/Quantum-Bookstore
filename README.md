@@ -43,7 +43,7 @@ Welcome to **Quantum Bookstore**, a demo Java application simulating an advanced
 
 ## Sample Output
 
-![Bookstore Output Screenshot](images/bookstore-demo.png)
+![Bookstore Output Screenshot](Images/Bookstore-Output-Screenshot.png)
 
 
 ```
