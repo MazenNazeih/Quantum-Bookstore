@@ -26,6 +26,26 @@ Welcome to **Quantum Bookstore**, a demo Java application simulating an advanced
 
 ---
 
+## Project Structure
+
+```plaintext
+
+src/main/java/com/bookstore/
+
+├── App.java                 → Entry point with main method to demonstrate features
+├── Book.java                → Abstract base class for all book types
+├── BookFactory.java         → Factory class to create different types of books
+├── PaperBook.java           → Subclass representing a physical paper book
+├── EBook.java               → Subclass representing an electronic book
+├── ShowcaseBook.java        → Subclass representing a non-sellable demo book
+├── Customer.java            → Represents a customer (name, email, balance, etc.)
+├── CustomerFactory.java     → Factory to create customers with unique IDs
+├── Inventory.java           → Manages available books and stock
+├── MailService.java         → Simulates sending eBooks via email
+└── ShippingService.java     → Simulates shipping physical books
+
+```
+
 
 
 ##  How it works
@@ -76,8 +96,11 @@ Thank you for shopping with us!
 ## How to Run
 - Navigate to \Bookstore\Quantum-Bookstore\bookstore> then excute the following code in powershell:
   
-```pwsh
+```powershell
+# Compile
 mvn clean compile
+
+# Run
 mvn exec:java '-Dexec.mainClass=com.bookstore.App'
 ```
 
