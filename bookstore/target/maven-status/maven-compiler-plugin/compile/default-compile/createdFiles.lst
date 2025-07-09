@@ -1,1 +1,11 @@
+com\bookstore\Inventory.class
+com\bookstore\ShowcaseBook.class
+com\bookstore\Book.class
+com\bookstore\PaperBook.class
+com\bookstore\MailService.class
+com\bookstore\ShippingService.class
+com\bookstore\Customer.class
 com\bookstore\App.class
+com\bookstore\CustomerFactory.class
+com\bookstore\BookFactory.class
+com\bookstore\EBook.class
